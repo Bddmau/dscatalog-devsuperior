@@ -12,9 +12,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tb_category")
 public class Category implements Serializable {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -30,6 +27,14 @@ public class Category implements Serializable {
 		this.id = id;
 		this.name = name;
 	}
+	
+	public Category(Category entity) {
+		this.id = entity.getId();
+		this.name = entity.getName();
+		
+	}
+	
+	
 
 	public Long getId() {
 		return id;
